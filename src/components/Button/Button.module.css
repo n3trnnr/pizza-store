@@ -1,0 +1,25 @@
+.button {
+    border-radius: 10px;
+    cursor: pointer;
+    background: red;
+    border: none;
+    color: white
+}
+
+.small {
+    padding: 10px 30px
+}
+
+.big {
+    padding: 20px 60px;
+    text-transform: uppercase;
+}
+
+.none {
+    margin: 0;
+    padding: 0;
+}
+
+.button:hover {
+    background: rgb(255, 61, 61);
+}

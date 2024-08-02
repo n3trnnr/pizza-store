@@ -1,0 +1,115 @@
+{
+  "users": [
+    {
+      "email": "john@mail.ru",
+      "password": "$2a$10$asOihR62wVGp8Fcl.htIUu5HMmoLZI1ueqRjPQ2TXbREF5Dd7NIui",
+      "name": "John",
+      "id": 1
+    }
+  ],
+  "menu": [
+    {
+      "id": "1",
+      "name": "Мараггита",
+      "price": 300,
+      "ingredients": [
+        "салями",
+        "руккола",
+        "помидоры",
+        "оливки"
+      ],
+      "image": "https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?t=st=1721254809~exp=1721258409~hmac=028819ce1522a8e58f04e677f46c8ba10d32bfcb45c8f02aabaeb63c88176759&w=740",
+      "rating": 4.7
+    },
+    {
+      "id": "2",
+      "name": "Takoc",
+      "price": 280,
+      "ingredients": [
+        "острый перец",
+        "лепёшка",
+        "фарш"
+      ],
+      "image": "https://img.freepik.com/premium-photo/oven-baked-italian-pizza-with-sauce-cheese-mushrooms-bell-peppers-olives-composition-with-ingredients-dark-table-top-view-vegetarian-pizza_207126-5075.jpg?w=996",
+      "rating": 4.8
+    },
+    {
+      "id": "3",
+      "name": "Аццки острая",
+      "price": 320,
+      "ingredients": [
+        "острый соус",
+        "грибы",
+        "помидоры",
+        "оливки"
+      ],
+      "image": "https://img.freepik.com/free-photo/crispy-mixed-pizza-with-olives-sausage_140725-3095.jpg?t=st=1721254819~exp=1721258419~hmac=a344eedcff4843d2b707ad1250142586c47a4b02a3d574c2255d3e3b70d1e595&w=740",
+      "rating": 4.9
+    },
+    {
+      "id": "4",
+      "name": "Мараггита",
+      "price": 300,
+      "ingredients": [
+        "салями",
+        "руккола",
+        "помидоры",
+        "оливки"
+      ],
+      "image": "https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?t=st=1721254809~exp=1721258409~hmac=028819ce1522a8e58f04e677f46c8ba10d32bfcb45c8f02aabaeb63c88176759&w=740",
+      "rating": 4.7
+    },
+    {
+      "id": "5",
+      "name": "Takoc",
+      "price": 280,
+      "ingredients": [
+        "острый перец",
+        "лепёшка",
+        "фарш"
+      ],
+      "image": "https://img.freepik.com/premium-photo/oven-baked-italian-pizza-with-sauce-cheese-mushrooms-bell-peppers-olives-composition-with-ingredients-dark-table-top-view-vegetarian-pizza_207126-5075.jpg?w=996",
+      "rating": 4.8
+    },
+    {
+      "id": "6",
+      "name": "Аццки острая",
+      "price": 320,
+      "ingredients": [
+        "острый соус",
+        "грибы",
+        "помидоры",
+        "оливки"
+      ],
+      "image": "https://img.freepik.com/free-photo/crispy-mixed-pizza-with-olives-sausage_140725-3095.jpg?t=st=1721254819~exp=1721258419~hmac=a344eedcff4843d2b707ad1250142586c47a4b02a3d574c2255d3e3b70d1e595&w=740",
+      "rating": 4.9
+    }
+  ],
+  "cart": [
+    {
+      "user": {
+        "email": "john@mail.ru",
+        "password": "$2a$10$asOihR62wVGp8Fcl.htIUu5HMmoLZI1ueqRjPQ2TXbREF5Dd7NIui",
+        "name": "John",
+        "id": 1
+      },
+      "products": [
+        {
+          "id": "1",
+          "name": "Мараггита",
+          "price": 300,
+          "ingredients": [
+            "салями",
+            "руккола",
+            "помидоры",
+            "оливки"
+          ],
+          "image": "https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?t=st=1721254809~exp=1721258409~hmac=028819ce1522a8e58f04e677f46c8ba10d32bfcb45c8f02aabaeb63c88176759&w=740",
+          "rating": 4.7
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "trash": []
+}

@@ -1,0 +1,27 @@
+.label {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-title {
+    padding: 0 0 20px 0;
+}
+
+.input {
+    /* width: 250px; */
+    height: 45px;
+    border-radius: 10px;
+    border: 2px solid rgb(180, 180, 180);
+}
+
+.label-big {
+    width: 100%;
+}
+
+.input-small {
+    padding-inline: 20px;
+}
+
+.input-big {
+    padding-inline: 20px 150px;
+}

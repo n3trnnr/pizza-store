@@ -1,0 +1,133 @@
+.cart-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    gap: 30px;
+}
+
+.items-list-wrapper {
+    padding: 0 20px 20px 0;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.items-list {
+    padding-inline-start: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.pizza-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.description-wrapper {
+    padding: 15px;
+    max-width: 200px;
+    height: auto;
+}
+
+.description {
+    font-weight: 600;
+}
+
+.pizza-price {
+    color: orange;
+}
+
+.dec-inc-wrapper {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.dec {
+    border: 1px solid orange;
+    color: orange;
+    background: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.inc {
+    border: none;
+    background: orange;
+    color: white;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.delete {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: orange;
+}
+
+.promocode {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.button-promocode {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}
+
+.final-count-wrapper {
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sum-wrapper {
+    width: 100%;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delivery-wrapper {
+    width: 100%;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sum-delivery-wrapper {
+    width: 100%;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.disabled {
+    background: gray;
+}
+
+.disabled:hover {
+    background: gray;
+}
