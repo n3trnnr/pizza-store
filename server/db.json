@@ -10,8 +10,8 @@
   "menu": [
     {
       "id": "1",
-      "name": "Мараггита",
-      "price": 300,
+      "name": "Маргарита",
+      "price": 450,
       "ingredients": [
         "салями",
         "руккола",
@@ -23,8 +23,8 @@
     },
     {
       "id": "2",
-      "name": "Takoc",
-      "price": 280,
+      "name": "Такос",
+      "price": 540,
       "ingredients": [
         "острый перец",
         "лепёшка",
@@ -35,8 +35,8 @@
     },
     {
       "id": "3",
-      "name": "Аццки острая",
-      "price": 320,
+      "name": "Spicy",
+      "price": 500,
       "ingredients": [
         "острый соус",
         "грибы",
@@ -48,68 +48,43 @@
     },
     {
       "id": "4",
-      "name": "Мараггита",
-      "price": 300,
+      "name": "Гурманская",
+      "price": 620,
       "ingredients": [
+        "бекон",
+        "лук красный",
         "салями",
-        "руккола",
-        "помидоры",
-        "оливки"
+        "огурцы маринованные"
       ],
-      "image": "https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?t=st=1721254809~exp=1721258409~hmac=028819ce1522a8e58f04e677f46c8ba10d32bfcb45c8f02aabaeb63c88176759&w=740",
-      "rating": 4.7
+      "image": "https://img.freepik.com/premium-photo/gourmet-pizza-with-artisan-toppings-captured-from-showcasing-bubbling-cheese-crispy-crust-classic-wooden-peel_1292047-4851.jpg?w=740",
+      "rating": 4.6
     },
     {
       "id": "5",
-      "name": "Takoc",
-      "price": 280,
+      "name": "Барбекю",
+      "price": 570,
       "ingredients": [
-        "острый перец",
-        "лепёшка",
-        "фарш"
+        "ветчина",
+        "бекон",
+        "грудка куриная"
       ],
-      "image": "https://img.freepik.com/premium-photo/oven-baked-italian-pizza-with-sauce-cheese-mushrooms-bell-peppers-olives-composition-with-ingredients-dark-table-top-view-vegetarian-pizza_207126-5075.jpg?w=996",
-      "rating": 4.8
+      "image": "https://img.freepik.com/free-photo/beef-mushroom-pizza-with-onion-cheese-wooden-plate_140725-10431.jpg?t=st=1722781461~exp=1722785061~hmac=5774dcc6982961a336244919c7acf617908d6d32cde1e5247aeb7a7d7a037360&w=740",
+      "rating": 4.7
     },
     {
       "id": "6",
-      "name": "Аццки острая",
-      "price": 320,
+      "name": "Летняя",
+      "price": 400,
       "ingredients": [
-        "острый соус",
-        "грибы",
+        "грудка куриная",
         "помидоры",
-        "оливки"
+        "моцарелла"
       ],
-      "image": "https://img.freepik.com/free-photo/crispy-mixed-pizza-with-olives-sausage_140725-3095.jpg?t=st=1721254819~exp=1721258419~hmac=a344eedcff4843d2b707ad1250142586c47a4b02a3d574c2255d3e3b70d1e595&w=740",
-      "rating": 4.9
+      "image": "https://img.freepik.com/free-photo/margherita-pizza-with-slices-lemon-wooden-tray_140725-3942.jpg?t=st=1722781464~exp=1722785064~hmac=7b76478d6bda1d1885e23a41bc163f95f983f13c145e46b63448df3a5e31478a&w=740",
+      "rating": 4.4
     }
   ],
-  "cart": [
-    {
-      "user": {
-        "email": "john@mail.ru",
-        "password": "$2a$10$asOihR62wVGp8Fcl.htIUu5HMmoLZI1ueqRjPQ2TXbREF5Dd7NIui",
-        "name": "John",
-        "id": 1
-      },
-      "products": [
-        {
-          "id": "1",
-          "name": "Мараггита",
-          "price": 300,
-          "ingredients": [
-            "салями",
-            "руккола",
-            "помидоры",
-            "оливки"
-          ],
-          "image": "https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?t=st=1721254809~exp=1721258409~hmac=028819ce1522a8e58f04e677f46c8ba10d32bfcb45c8f02aabaeb63c88176759&w=740",
-          "rating": 4.7
-        }
-      ],
-      "id": 1
-    }
-  ],
-  "trash": []
+  "cart": [],
+  "orders": [],
+  "ordersHistory": []
 }

@@ -6,7 +6,7 @@ import { RootState } from "./store";
 
 interface IRegisterUser {
     accessToken: string,
-    user: IUserData
+    user: IUserData,
 }
 interface ILoginUser {
     accessToken: string,
@@ -30,7 +30,7 @@ const initialState: IInitialState = {
     user: {
         email: undefined,
         id: getState(USERID_PERSISTENT_STATE) ?? undefined,
-        name: undefined
+        name: undefined,
     }
 }
 
@@ -75,23 +75,6 @@ export const loginUser = createAsyncThunk<ILoginUser, IFormdata, { rejectValue: 
         return data
     })
 
-// export const getUserProfile = createAsyncThunk<IUserData, number, { rejectValue: string, state: RootState }>(
-//     'user/getUserProfile',
-//     async (id, { rejectWithValue, getState }) => {
-//         const token = getState().user.token;
-//         const res = await fetch(`http://localhost:3000/users/${id}`, {
-//             headers: {
-//                 Authorization: `Bearer ${token}`
-//             }
-//         });
-
-//         if (!res.ok) {
-//             throw rejectWithValue(await res.json())
-//         }
-//         const data = await res.json() as IUserData
-//         return data
-//     }
-// )
 export const getUserProfile = createAsyncThunk<IUserData, number, { rejectValue: string, state: RootState }>(
     'user/getUserProfile',
     async (id, { rejectWithValue, getState }) => {

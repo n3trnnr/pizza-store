@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction, UnknownAction } from "@reduxjs/toolkit";
 import { IOrder, IProductData } from "../interfaces/interfaces";
 import { getState } from "./localStorage/localStorage";
 import { CART_PERSISTANT_STATE } from "../constants/constants";
@@ -10,12 +10,14 @@ export interface ICartItem {
 
 export interface IInitialState {
     productsCart: ICartItem[],
-    products: IProductData[]
+    products: IProductData[],
+    error: null | string
 }
 
 const initialState: IInitialState = {
     productsCart: getState(CART_PERSISTANT_STATE) ?? [],
-    products: []
+    products: [],
+    error: null
 }
 
 export const getProductById = createAsyncThunk<IProductData[], ICartItem[], { rejectValue: string }>(
@@ -28,7 +30,7 @@ export const getProductById = createAsyncThunk<IProductData[], ICartItem[], { re
                     method: 'GET',
                 })
                 if (!res.ok) {
-                    rejectWithValue(res.statusText)
+                    rejectWithValue(await res.json())
                 }
                 return await res.json()
             }
@@ -53,7 +55,7 @@ export const postOrder = createAsyncThunk<IOrder, IOrder, { rejectValue: string 
         })
 
         if (!res.ok) {
-            rejectWithValue(res.statusText)
+            rejectWithValue(await res.json())
         }
 
         const data = await res.json() as IOrder;
@@ -117,9 +119,16 @@ const cartSlice = createSlice({
             .addCase(postOrder.fulfilled, (state) => {
                 state.productsCart = []
             })
+            .addMatcher(isError, (state, action) => {
+                state.error = action.type
+            })
 
     }
 })
 
 export const { add, inc, dec, remove } = cartSlice.actions
 export default cartSlice.reducer
+
+function isError(action: UnknownAction) {
+    return action.type.endsWith('rejected')
+}

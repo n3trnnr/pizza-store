@@ -12,8 +12,7 @@ import { useNavigate } from 'react-router-dom';
 const Cart = () => {
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
-    const products = useAppSelector((state) => state.cart.products)
-    const productsCart = useAppSelector((state) => state.cart.productsCart)
+    const { products, productsCart, error } = useAppSelector((state) => state.cart)
     const user = useAppSelector((state) => state.user.user)
     const [isOrder, setIsOrder] = useState<boolean>(false)
 
@@ -63,20 +62,23 @@ const Cart = () => {
     }, 0)
 
     const submit = () => {
-        const order = {
-            user: user,
-            products: products
+        if (user.id) {
+            const order = {
+                userId: user.id,
+                products: products
+            }
+            dispatch(postOrder(order))
+            navigate('/success')
         }
-        dispatch(postOrder(order))
-        navigate('/success')
     }
 
     return (
         <div className={styles['cart-wrapper']}>
-            <h2 style={{ margin: '30px 0 0 0' }}>Корзина</h2>
+            <h2>Корзина</h2>
             <div className={styles['items-list-wrapper']}>
                 <ul className={styles['items-list']}>
                     {!products.length && <div>Корзина пустая</div>}
+                    {error && <div>Ошибка загрузки</div>}
                     {products.map((item) => (
                         <li key={item.id} className={styles['item']}>
                             <div className={styles['pizza-img']} style={{ backgroundImage: `url(${item.image})` }}></div>

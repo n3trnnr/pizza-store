@@ -49,7 +49,7 @@ const AsideLayout = () => {
                         }, 0)}
                     </div>
                 </NavLink>
-                <NavLink to='/trash' className={({ isActive }) => cn('', { [styles.active]: isActive })}>Что-то еще</NavLink>
+                {/* <NavLink to='/trash' className={({ isActive }) => cn('', { [styles.active]: isActive })}>Что-то еще</NavLink> */}
             </div>
             <Button onClick={logout} appearance={"small"} styleName={styles['log-out-button']}>
                 Выйти

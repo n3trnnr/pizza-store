@@ -1,5 +1,3 @@
 {
-    "/users": "/600/users",
-    "/menu": "/664/menu",
-    "/cart": "/600/cart"
+    "/menu/:val": "/menu?name=:val"
 }

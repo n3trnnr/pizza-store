@@ -19,10 +19,10 @@ export interface IFormdata {
 export interface IUserData {
     email: string | undefined,
     id: number | undefined,
-    name: string | undefined
+    name: string | undefined,
 }
 
 export interface IOrder {
-    user: IUserData,
+    userId: number,
     products: IProductData[]
 }

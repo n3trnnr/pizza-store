@@ -7,6 +7,7 @@
 }
 
 .small {
+    max-width: 250px;
     padding: 10px 30px
 }
 
