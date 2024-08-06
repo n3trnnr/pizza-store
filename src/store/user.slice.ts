@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction, UnknownAction } from "@reduxjs/toolkit";
 import { getState } from "./localStorage/localStorage";
-import { USER_PERSISTENT_STATE, USERID_PERSISTENT_STATE } from "../constants/constants";
+import { PREFIX, TOKEN_PERSISTENT_STATE, USERID_PERSISTENT_STATE } from "../constants/constants";
 import { IFormdata, IUserData } from "../interfaces/interfaces";
 import { RootState } from "./store";
 
@@ -24,12 +24,12 @@ const initialState: IInitialState = {
     //Токен устанавливается при регистрации пользователя, далее берется из localstorage 
     //Получиение токена при первичном запуске (инициализации) проекта.
     //Функция getToken отрабатывается при первичной загрузке страницы, так же как первично реднерядся компоненты 
-    token: getState(USER_PERSISTENT_STATE)?.token || null,
+    token: getState(TOKEN_PERSISTENT_STATE) || null,
     error: null,
     status: '',
     user: {
         email: undefined,
-        id: getState(USERID_PERSISTENT_STATE) ?? undefined,
+        id: getState(USERID_PERSISTENT_STATE) ?? null,
         name: undefined,
     }
 }
@@ -37,7 +37,7 @@ const initialState: IInitialState = {
 export const registerUser = createAsyncThunk<IRegisterUser, IFormdata, { rejectValue: string }>(
     'user/registerUser',
     async (formData, { rejectWithValue, dispatch }) => {
-        const res = await fetch('http://localhost:3000/register', {
+        const res = await fetch(`${PREFIX}/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -58,10 +58,10 @@ export const registerUser = createAsyncThunk<IRegisterUser, IFormdata, { rejectV
 export const loginUser = createAsyncThunk<ILoginUser, IFormdata, { rejectValue: string }>(
     'user/loginUser',
     async (formData, { rejectWithValue, dispatch }) => {
-        const res = await fetch('http://localhost:3000/login', {
+        const res = await fetch(`${PREFIX}/login`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(formData)
         })
@@ -78,10 +78,9 @@ export const loginUser = createAsyncThunk<ILoginUser, IFormdata, { rejectValue: 
 export const getUserProfile = createAsyncThunk<IUserData, number, { rejectValue: string, state: RootState }>(
     'user/getUserProfile',
     async (id, { rejectWithValue, getState }) => {
-        const token = getState().user.token;
-        const res = await fetch(`http://localhost:3000/users/${id}`, {
+        const res = await fetch(`${PREFIX}/users/${id}`, {
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${getState().user.token}`
             }
         });
 
@@ -108,9 +107,7 @@ const userSlice = createSlice({
         },
         logout(state) {
             state.token = null
-            state.user.id = undefined
-            state.user = { email: undefined, id: undefined, name: undefined }
-            // localStorage.removeItem('token')
+            state.user = { email: undefined, id: null, name: undefined }
         }
 
     },

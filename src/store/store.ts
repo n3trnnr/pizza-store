@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { CART_PERSISTANT_STATE, USER_PERSISTENT_STATE, USERID_PERSISTENT_STATE } from "../constants/constants";
+import { CART_PERSISTANT_STATE, TOKEN_PERSISTENT_STATE, USERID_PERSISTENT_STATE } from "../constants/constants";
 import { saveState } from "./localStorage/localStorage";
 import userSlice from "./user.slice";
 import cartSlice from "./cart.slice";
@@ -11,7 +11,7 @@ const store = configureStore({
     },
 })
 store.subscribe(() => {
-    saveState(USER_PERSISTENT_STATE, { token: store.getState().user.token })
+    saveState(TOKEN_PERSISTENT_STATE, store.getState().user.token)
     saveState(USERID_PERSISTENT_STATE, store.getState().user.user.id)
     saveState(CART_PERSISTANT_STATE, store.getState().cart.productsCart)
 })

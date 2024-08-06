@@ -1,0 +1,36 @@
+.item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.pizza-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.description-wrapper {
+    padding: 15px;
+    max-width: 200px;
+    height: auto;
+}
+
+.description {
+    color: var(--color-grey);
+    font-size: 14px;
+}
+
+.pizza-price {
+    color: orange;
+}
+
+.order-price {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 500;
+}

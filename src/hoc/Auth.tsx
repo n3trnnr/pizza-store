@@ -8,7 +8,7 @@ const Auth = ({ children }: IAuth) => {
     const token = useAppSelector((state) => state.user.token)
     // console.log('Auth -', token);
 
-    if (!token) {
+    if (token === null) {
         return <Navigate to={'/auth/signup'} replace={true} state={{ path: location.pathname }} />
     }
 

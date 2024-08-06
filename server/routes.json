@@ -1,3 +1,1 @@
-{
-    "/menu/:val": "/menu?name=:val"
-}
+{}

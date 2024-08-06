@@ -17,6 +17,7 @@ import Success from "../Pages/Success/Success";
 //Lazy компоненты используются с Suspense
 //Suspense можно исползовать вместе loading в самом компоненте при ожидании получения данных
 const Menu = lazy(() => import('../Pages/Menu/Menu'))
+const Delivery = lazy(() => import('../Pages/Delivery/Delivery'))
 
 const Router = () => {
     const router = createBrowserRouter(
@@ -49,22 +50,24 @@ const Router = () => {
                         //     return data
                         // }}
 
+                        //--------------------------------------------------------------------------------------------------------
+
                         loader={async ({ request, params }) => {
                             console.log('loader request', request);
 
-                            //Данный способ запроса данных плохо работает с Suspense, т.к. данные ожидаются в функции запроса, 
-                            //и приходят в <Await> практически мгновенно
-
+                            //Данный способ запроса данных плохо работает с Suspense, т.к. данные ожидаются в функции запроса, и приходят в <Await> практически мгновенно
                             // const data = await fetch(`${PREFIX}/menu/${params.id}`)
                             // if (!res.ok) {
                             // throw new Error('ошибка запроса')
                             // }
                             // const data = res.json()
 
+                            //--------------------------------------------------------------------------------------------------------
+
                             // Второй вариант реализации прелоадера, если не использовать await загрузка в Suspense будет дольше
                             const data = fetch(`${PREFIX}/menu/${params.id}`).then(data => data.json())
 
-                            // Второй вариант реализации прелоадера
+                            // Третий вариант реализации прелоадера
                             // const data = new Promise(async (resolve, reject) => {
                             //     const fetchData = await fetch(`${PREFIX}/menu/${params.id}`)
                             //     console.log('fetchData', fetchData);
@@ -74,10 +77,11 @@ const Router = () => {
                             //     resolve(fetchData.json())
                             // })
 
-                            return defer({ data })
+                            return defer({ data }) //Возврат данных из loader возвращается через defer
                         }}
                         errorElement={< ErrorPage />}
                     />
+                    <Route path='delivery' element={<Suspense fallback={<div>Идет загрузка данных...</div>}><Delivery /></Suspense>} />
                     <Route path='success' element={<Success />} />
                     <Route path="*" element={<ErrorPage />} />
                 </Route>

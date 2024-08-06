@@ -65,7 +65,8 @@ const Cart = () => {
         if (user.id) {
             const order = {
                 userId: user.id,
-                products: products
+                products: products,
+                productsCart: productsCart
             }
             dispatch(postOrder(order))
             navigate('/success')

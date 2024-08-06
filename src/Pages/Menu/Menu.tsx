@@ -6,7 +6,6 @@ import SearchInput from "../../components/SearchInput/SearchInput";
 import styles from './Menu.module.css'
 
 const Menu = () => {
-
     const [product, setProduct] = useState<IProductData[]>([])
     const [isLoaded, setIsLoaded] = useState<boolean>(false)
     const [isError, setIsError] = useState<any | string>('')
@@ -21,7 +20,7 @@ const Menu = () => {
             setIsLoaded(true)
 
             //Сортировка данных по подстроке 
-            const res = await fetch(`${PREFIX}/menu?${query}`,)
+            const res = await fetch(`${PREFIX}/menu?${query}`)
             if (!res.ok) {
                 const error = `${res.status} - ${res.statusText}`
                 throw new Error(error)
@@ -32,7 +31,7 @@ const Menu = () => {
             setIsLoaded(false)
         } catch (error) {
             if (error instanceof Error) {
-                console.log('catch error - ', error?.message);
+                // console.log('catch error - ', error?.message);
                 setIsLoaded(false)
                 setIsError(error?.message)
             }

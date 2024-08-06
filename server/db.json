@@ -1,10 +1,16 @@
 {
   "users": [
     {
-      "email": "john@mail.ru",
-      "password": "$2a$10$asOihR62wVGp8Fcl.htIUu5HMmoLZI1ueqRjPQ2TXbREF5Dd7NIui",
-      "name": "John",
-      "id": 1
+      "email": "qwe@mail.ru",
+      "password": "$2a$10$k8OtrR1KiLMGjJ4sSamBce7dzkY2eTqnBizSeMkhkDMcn3OD8EpNy",
+      "name": "qwe",
+      "id": 2
+    },
+    {
+      "email": "amen-as@mail.ru",
+      "password": "$2a$10$p6UtbFA3NS/zJGgmUD7IG.AApJpeEEu48DW2GAoJp8gL8bm.vrCbe",
+      "name": "Алексей",
+      "id": 3
     }
   ],
   "menu": [
@@ -84,7 +90,5 @@
       "rating": 4.4
     }
   ],
-  "cart": [],
-  "orders": [],
-  "ordersHistory": []
+  "cart": []
 }

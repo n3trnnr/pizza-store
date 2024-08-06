@@ -31,7 +31,7 @@ const Card: FC<ICard> = ({ id, title, description, rating, price, img }) => {
                     </Button>
                 </div>
                 <div className={styles['pizza-info']}>
-                    <div className={styles.title}>{title}</div>
+                    <div>{title}</div>
                     <div className={styles.description}>{description.join(', ')}</div>
                 </div>
             </div>
