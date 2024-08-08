@@ -3,14 +3,20 @@ import styles from './DeliveryList.module.css'
 
 const DeliveryList = ({ order }: IDeliveryList) => {
 
-    const totalPrice = () => {
-        if (order) {
-            return order.products.reduce((acc, item) => {
-                return acc += item.price
-            }, 0)
+    const totalPrice = order.products.map((i) => {
+        const product = order.productsCart.find((j) => {
+            if (i.id === j.id) {
+                return j
+            }
+        })
+        if (product) {
+            return i.price * product.count
+        } else {
+            return 0
         }
-        return 0
-    }
+    }).reduce((acc, item) => {
+        return acc += item
+    }, 0)
 
     const productsCount = (productId: number) => {
         const productCount = order.productsCart.find((i) => {
@@ -29,12 +35,12 @@ const DeliveryList = ({ order }: IDeliveryList) => {
                         <div className={styles['title']}>{item.name}</div>
                         <div className={styles['description']}>{item.ingredients.join(', ')}</div>
                         <div className={styles['pizza-price']}>{item.price}₽</div>
-                        <div>{productsCount(item.id)}</div>
+                        <div className={styles['description']}>{productsCount(item.id)} шт.</div>
                     </div>
                 </li>
             ))}
             {<div className={styles['order-price']}>
-                Итог<span>{order ? totalPrice() : 0}р</span>
+                Итог<span>{order ? totalPrice : 0}р</span>
             </div>}
             <hr />
         </>
